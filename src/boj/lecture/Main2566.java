@@ -1,4 +1,4 @@
-package boj.study;
+package boj.lecture;
 
 import java.io.BufferedReader;
 import java.io.IOException;
