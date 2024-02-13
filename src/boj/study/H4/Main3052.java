@@ -8,13 +8,21 @@ import java.io.InputStreamReader;
 public class Main3052 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        int[] arr = new int[10];
+
+        // 42로 나누었을떄의 나머지를 인덱스로 하는 배열
+        int[] arr = new int[1001];
+
+
         for (int i = 0; i < 10; i++) {
-            // 42로 나눈 나머지를 배열에 삽입
-            arr[i] = Integer.parseInt(br.readLine()) % 42;
-            sb.append(arr[i]).append(" ");
+            int index = Integer.parseInt(br.readLine()) % 42;
+            arr[index]++;
         }
-        System.out.println(sb);
+        // 배열에서 값이 1인 것 카운트
+        int count = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) count++;
+        }
+        System.out.println(count);
     }
 }
