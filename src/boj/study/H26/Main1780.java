@@ -8,9 +8,9 @@ import java.util.StringTokenizer;
 // 종이의 개수 : https://www.acmicpc.net/problem/1780
 public class Main1780 {
     public static int[][] board;
-    public static int One;
-    public static int Zero;
-    public static int MinusOne;
+    public static int One = 0;
+    public static int Zero = 0;
+    public static int MinusOne = 0;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -25,20 +25,17 @@ public class Main1780 {
                 board[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-
         partition(0, 0, n);
         System.out.println(MinusOne);
         System.out.println(Zero);
         System.out.println(One);
-
-
     }
 
 
-
-    // 1. 만약 종이가 모두 같은 수도 되어 있다면
+    // 종이 자르기 메서드
     public static void partition(int row, int col, int size) {
-        if (!equalNumber(row, col, size)) {
+        // 모든 수가 같은 수로 되어있다면
+        if (equalNumber(row, col, size)) {
             if (board[row][col] == 1) {
                 One++;
             } else if (board[row][col] == 0) {
@@ -46,34 +43,35 @@ public class Main1780 {
             } else {
                 MinusOne++;
             }
-            int newSize = size / 3;
-
-            partition(row, col, newSize);
-            partition(row, col+newSize, newSize);
-            partition(row, col+newSize+newSize, newSize);
-            partition(row+newSize, col, newSize);
-            partition(row+newSize, col+newSize, newSize);
-            partition(row+newSize, col+newSize+newSize, newSize);
-            partition(row+newSize+newSize, col, newSize);
-            partition(row+newSize+newSize, col+newSize, newSize);
-            partition(row+newSize+newSize, col+newSize+newSize, newSize);
+            return;
         }
+        int newSize = size / 3;
+
+        // 9개의 파티션을 만들어야 한다.
+        partition(row, col, newSize);								// 왼쪽 위
+        partition(row, col + newSize, newSize);						// 중앙 위
+        partition(row, col + 2 * newSize, newSize);					// 오른쪽 위
+
+        partition(row + newSize, col, newSize);						// 왼쪽 중간
+        partition(row + newSize, col + newSize, newSize);			// 중앙 중간
+        partition(row + newSize, col + 2 * newSize, newSize);		// 오른쪽 중간
+
+        partition(row + 2 * newSize, col, newSize);					// 왼쪽 아래
+        partition(row + 2 * newSize, col + newSize, newSize);		// 중앙 아래
+        partition(row + 2 * newSize, col + 2 * newSize, newSize);	// 오른쪽 아래
+
     }
 
-
-
+    // 종이가 모두 같은 수로 되어있는지를 체크하는 메서드
     public static boolean equalNumber(int row, int col, int size) {
-        // 동일한 숫자로 이루어져 있는지 확인
-        int num = board[row][col];
+        int num = board[row][col]; // (0, 0) 부터 시작
 
-        for (int i = 0; i < row+size; i++) {
-            for (int j = 0; j < col+size; j++) {
+        for (int i = row; i < row + size; i++) {
+            for (int j = col; j < col + size; j++) {
                 if (board[i][j] != num) {
                     return false;
                 }
-
             }
-
         }
         return true;
     }
