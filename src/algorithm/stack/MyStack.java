@@ -1,4 +1,4 @@
-package algorithm.d3;
+package algorithm.stack;
 
 // int 데이터를 스택의 형태로 관리할 수 있느 클래스
 

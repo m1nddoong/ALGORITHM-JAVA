@@ -1,4 +1,4 @@
-package algorithm.d3;
+package algorithm.stack;
 
 import java.util.ArrayList;
 import java.util.List;

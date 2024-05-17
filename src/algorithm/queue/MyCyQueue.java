@@ -1,4 +1,4 @@
-package algorithm.d4;
+package algorithm.queue;
 
 // 원형 큐
 public class MyCyQueue {

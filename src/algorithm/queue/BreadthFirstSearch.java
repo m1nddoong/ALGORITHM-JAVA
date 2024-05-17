@@ -1,4 +1,4 @@
-package algorithm.d4;
+package algorithm.queue;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
