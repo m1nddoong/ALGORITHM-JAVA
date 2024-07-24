@@ -5,42 +5,53 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main4779 {
-    public static boolean[] arr;
-    public static int space;
-
+    public static String[] arr;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
-        String s;
-        while ((s = br.readLine()) != null && !s.isEmpty()) {
-            int n = Integer.parseInt(s);
-            // 총 문자열의 공간
-            space = (int) Math.pow(3, n);
 
-            arr = new boolean[space];
-            division(n, 0);
+        while (true) {
+            String s = br.readLine();
+            if (s != null && !s.isEmpty()) {
+                if(s.equals("0")) {
+                    sb.append("-").append("\n");
+                    continue;
+                }
 
-            for (int i = 0; i < space; i++) {
-                sb.append(arr[i] ? " " : "-");
+                // 총 문자열의 공간
+                int n = Integer.parseInt(s);
+                int length = (int) Math.pow(3, n);
+
+                arr = new String[length];
+                for (int i = 0; i < length; i++) {
+                    arr[i] = "-";
+                }
+
+                division(length, 0);
+
+                for (int i = 0; i < length; i++) {
+                    sb.append(arr[i]);
+                }
+                sb.append("\n");
+
+            } else {
+                break;
             }
-            sb.append("\n");
         }
         System.out.print(sb);
     }
 
-    public static void division(int n, int first) {
-        while (n > 0) {
-            // 3등분 하였을 때 한 선의 길이
-            int length = (int) Math.pow(3, (n - 1));
-            for (int i = first + length; i < first + 2 * length; i++) {
-                // 공백을 true 로 설정
-                arr[i] = true;
-            }
-            n--;
-            for (int i = 0; i < space; i += first + 2 * length) {
-                division(n, i);
-            }
+    public static void division(int length, int start) {
+        if (length <= 1) {
+            return;
         }
+        // 3등분 하였을 때 한 선의 길이
+        int newLength = length / 3;
+        for (int i = start + newLength; i < start + 2 * newLength; i++) {
+            // 공백을 true 로 설정
+            arr[i] = " ";
+        }
+        division(newLength, start);
+        division(newLength, start + newLength * 2);
     }
 }
-
