@@ -5,6 +5,8 @@ package programmers.basic;
  */
 class Solution {
     public String solution(String my_string, String overwrite_string, int s) {
+        /*
+        // 내코드
         char[] myArr = my_string.toCharArray();
         char[] overwriteArr = overwrite_string.toCharArray();
 
@@ -13,6 +15,11 @@ class Solution {
         }
 
         return String.valueOf(myArr);
+         */
+
+        String before = my_string.substring(0, s);
+        String after = my_string.substring(s + overwrite_string.length());
+        return before + overwrite_string + after;
     }
 }
 
@@ -21,3 +28,5 @@ public class Solution181943 {
         System.out.println(new Solution().solution("He11oWorld", "lloWorl", 2));
     }
 }
+
+
