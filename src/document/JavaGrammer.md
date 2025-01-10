@@ -29,6 +29,8 @@ String substring(int beginIndex, int endIndex);
   - `forEach` : : 스트림의 각 요소를 하나씩 소비하여 작업을 수행합니다. 주로 요소를 출력하거나 특정 작업을 실행할 때 사용
   - `toArray`
   - `collect` 
-  
+  - `anyMatch`
+  - `allMatch` : 스트림의 모든 요소가 주어진 조건을 만족하는지 검사 (조건을 만족하면 true를 반환하고, 하나라도 만족하지 않으면 false를 반환)
+  - `noneMatch`
 
 
