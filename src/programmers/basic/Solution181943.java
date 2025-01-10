@@ -3,8 +3,9 @@ package programmers.basic;
 /**
  * 문자열 겹쳐쓰기 : https://school.programmers.co.kr/learn/courses/30/lessons/181943#
  */
-class Solution {
-    public String solution(String my_string, String overwrite_string, int s) {
+
+public class Solution181943 {
+    public static String solution(String my_string, String overwrite_string, int s) {
         /*
         // 내코드
         char[] myArr = my_string.toCharArray();
@@ -21,11 +22,9 @@ class Solution {
         String after = my_string.substring(s + overwrite_string.length());
         return before + overwrite_string + after;
     }
-}
 
-public class Solution181943 {
     public static void main(String[] args) {
-        System.out.println(new Solution().solution("He11oWorld", "lloWorl", 2));
+        System.out.println(solution("He11oWorld", "lloWorl", 2));
     }
 }
 
