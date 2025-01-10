@@ -1,4 +1,4 @@
-package programmers.dfs;
+package programmers.lecture.d4lecture.dfs;
 
 import java.util.LinkedList;
 import java.util.Queue;

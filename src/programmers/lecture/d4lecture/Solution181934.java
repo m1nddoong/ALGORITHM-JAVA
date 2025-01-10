@@ -1,4 +1,4 @@
-package programmers;
+package programmers.lecture.d4lecture;
 
 // 조건 문자
 // 새싹, 조건 문자열, 고무오리

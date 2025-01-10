@@ -1,4 +1,4 @@
-package programmers.d4lecture;
+package programmers.lecture.d4lecture;
 
 public class Solution181925 {
     public String solution(int[] numLog) {

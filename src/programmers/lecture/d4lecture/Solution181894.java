@@ -1,4 +1,4 @@
-package programmers;
+package programmers.lecture.d4lecture;
 
 import java.util.Arrays;
 

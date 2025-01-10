@@ -1,4 +1,4 @@
-package programmers;
+package programmers.lecture.d4lecture;
 
 class Solution {
     public String solution(String code) {
