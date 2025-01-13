@@ -1,12 +1,17 @@
 # 문법 정리
 
+> 수열은 점화식
+
+
 ## String
 ```java
 // index 이후 위치의 문자열 리턴
 String substring(int index);
 // begin ~ end 위치의 문자열 리턴
 String substring(int beginIndex, int endIndex);
-
+```
+```java
+StringBuilder sb = new StringBuilder();
 ```
 ## Math 함수 정리
 - Math.pow(a, b)
@@ -34,6 +39,7 @@ String substring(int beginIndex, int endIndex);
 
 ## Stream 
 ### 1. 스트림 생성
+- Arrays.stream(arr) : 배열의 타입에 따라서 반환 스트림이 달라짐
 ```java
 // 컬렉션 배열의 경우 : Arrays.stream(arr)
 String[] arr = {"A", "B", "C", "D"};
@@ -46,6 +52,16 @@ IntStream intStream = Arrays.stream(nums);
 // 따로 charStream은 존재하지 않는다.
 Instream charStream = "abcdefg@gmail.com".chars();
 ```
+#### IntStream 의 range() 메소드
+```java
+public int solution(int a, int d, boolean[] included) {
+  int answer = 0;
+  return IntStream.range(0, included.length)
+          .map(i -> included[i] ? a + d * i : 0)
+          .sum();
+}
+```
+
 ### 2. 중간 연산
 `filter`, `map`, `sort`
 
@@ -72,6 +88,24 @@ List<String> strings = numbers.stream()
 // mapToInt
 // 타입변환용(book 객체를 intStream 으로) 
 IntStream mapToInt(ToIntFunction<? super T> mapper);
+
+
+// mapToObject
+// IntStream 을 문자열로 변환
+int[] numList = {1, 2, 3, 4, 5};
+
+List<String> stringList = Arrays.stream(numList)
+        .mapToObj(Integer::toString)  // int를 String으로 변환
+        .collect(Collectors.toList());
+
+// IntStream 을 문자로 변환
+int[] numList = {65, 66, 67, 68};  // ASCII 코드 (A, B, C, D)
+
+List<Character> charList = Arrays.stream(numList)
+        .mapToObj(i -> (char) i)  // int를 char로 변환
+        .collect(Collectors.toList());
+
+
 
 
 // sort
@@ -190,5 +224,21 @@ class Test {
 
 // sum
 
+/**
+ * int reduce(int identity, IntBinaryOperator op) 
+ * - 설명 : 배열의 모든 요소를 순차적으로 처리하여 결과를 누적하는 방식의 메서드
+ * - identity : 초기값
+ * - op : 각 요소를 처리하는 람다식
+ *   - left : 누적된 값
+ *   - right : 현재 요소
+ */
+int product = Arrays.stream(arr)
+        .reduce(1, (a, b) -> a * b);
+
+int max = Arrays.stream(new int[]{1, 5, 3, 7, 2})
+        .reduce(Integer.MIN_VALUE, (a, b) -> Math.max(a, b));
+
 // min, max, average
+
+
 ```
