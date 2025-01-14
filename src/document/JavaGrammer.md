@@ -2,6 +2,12 @@
 
 > 수열은 점화식
 
+## Integer
+```java
+// 정수를 2진수 변환
+// String binaryString = Integer.toBinaryString(int i);
+System.out.println(Integer.toBinaryString(255)); // "11111111"
+```
 
 ## String
 ```java
@@ -9,6 +15,17 @@
 String substring(int index);
 // begin ~ end 위치의 문자열 리턴
 String substring(int beginIndex, int endIndex);
+
+// 정수배열 -> String
+Arrays.toString(int[] a);
+
+/**
+ * 배열 초기화
+ * Arrays.fill(arr, fromIdx, toIdx, value);
+ * - arr 데이터형 (int, long, double, char, boolean, byte, Object)
+ */
+Arrays.fill(arr, -1);
+
 ```
 ```java
 StringBuilder sb = new StringBuilder();
@@ -16,6 +33,7 @@ StringBuilder sb = new StringBuilder();
 ## Math 함수 정리
 - Math.pow(a, b)
 - Math.abs(a)
+- Math.min(a, b)
 
 
 
