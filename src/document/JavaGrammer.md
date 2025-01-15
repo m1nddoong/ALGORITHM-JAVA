@@ -26,10 +26,27 @@ Arrays.toString(int[] a);
  */
 Arrays.fill(arr, -1);
 
+Arrays.sort(); 
+
 ```
 ```java
 StringBuilder sb = new StringBuilder();
 ```
+
+## Stack
+> Stack 은 Vector 상속하고 있어서 문제가 있기때문에 자바 doc 찾아보면 Deque인터페이스의 ArrayDeque 구현체를 스택과 큐로 사용하는 것을 권장
+```java
+Deque<E> stack = new ArrayDeque<>();
+
+void push(E e);
+E pop();
+E peek();
+boolean isEmpty();
+```
+
+
+
+
 ## Math 함수 정리
 - Math.pow(a, b)
 - Math.abs(a)
