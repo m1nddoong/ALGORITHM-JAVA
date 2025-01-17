@@ -31,6 +31,13 @@ Arrays.sort();
 ```
 ```java
 StringBuilder sb = new StringBuilder();
+// String 넣어서 초기화 가능
+StringBuilder t = new StringBuilder(s.substring(l, r + 1));
+
+public StringBuilder delete(int start, int end); // start ~ end 까지 삭제
+public StringBuilder insert(int offset, String str); // offset 위치에 str 에 전달된 문자열 추가
+public StringBuilder replcae(int start, int end, String str); // start ~ end 내용을 str 로 대체
+public StringBuilder reverse(); // 문자열 뒤집기
 ```
 
 ## Stack
