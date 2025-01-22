@@ -95,6 +95,7 @@ IntStream intStream = Arrays.stream(nums);
 Instream charStream = "abcdefg@gmail.com".chars();
 ```
 #### IntStream 의 range() 메소드
+- 지정된 범위의 정수를 생성하는 메서드
 ```java
 public int solution(int a, int d, boolean[] included) {
   int answer = 0;
@@ -102,6 +103,9 @@ public int solution(int a, int d, boolean[] included) {
           .map(i -> included[i] ? a + d * i : 0)
           .sum();
 }
+
+IntStream.range(1, 5).forEach(System.out::println); // 마지막 5는 포함 X
+IntStream.rangeClosed(1, 5).forEach(System.out::println); // 마지막 5도 포함 O
 ```
 
 ### 2. 중간 연산
