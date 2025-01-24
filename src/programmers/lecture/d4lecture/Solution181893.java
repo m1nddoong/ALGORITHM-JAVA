@@ -2,6 +2,7 @@ package programmers.lecture.d4lecture;
 
 import java.util.Arrays;
 
+// 배열 조각하기 : https://school.programmers.co.kr/learn/courses/30/lessons/181893
 public class Solution181893 {
     class Solution {
         public int[] solution(int[] arr, int[] query) {
