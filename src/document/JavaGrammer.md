@@ -26,8 +26,16 @@ Arrays.toString(int[] a);
  */
 Arrays.fill(arr, -1);
 
-Arrays.sort(); 
+Arrays.sort();
 
+/**
+ * 배열 특정 구간 복사 
+ * Arrays.copyOfRange(int[] original, int from, int to)
+ * - original : 원본 배열
+ * - from ~ to : 시작 ~ 끝 인덱스
+ */
+int[] original = {10, 20, 30, 40, 50};
+int[] copy = Arrays.copyOfRange(original, 1, 4); // [20, 30, 40]
 ```
 ```java
 StringBuilder sb = new StringBuilder();
