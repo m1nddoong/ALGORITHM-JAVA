@@ -292,6 +292,7 @@ int product = Arrays.stream(arr)
 int max = Arrays.stream(new int[]{1, 5, 3, 7, 2})
         .reduce(Integer.MIN_VALUE, (a, b) -> Math.max(a, b));
 
+answer = Arrays.stream(num_list).reduce(1, (a, b) -> a * b);
 // min, max, average
 
 
