@@ -11,10 +11,62 @@ System.out.println(Integer.toBinaryString(255)); // "11111111"
 
 ## String
 ```java
+// < String 클래스 >
+
 // index 이후 위치의 문자열 리턴
 String substring(int index);
 // begin ~ end 위치의 문자열 리턴
 String substring(int beginIndex, int endIndex);
+
+// 소문자로 리턴
+String str1 = myString.toLowerCase();
+// 대문자로 리턴
+String str2 = myString. toUpperCase();
+
+// 문자열 포함
+public boolean contains(CharSequence s) {}
+
+// 문자열 내 뮨자 교환
+public String replace(char oldChar, char newChar) {}
+
+// 문자열 자르기 (정규표현식 regex 입력)
+public String[] split(String regex) {}
+
+
+// 문자열에서 특정 문자열 또는 문자가 등장하는 위치(인덱스) 반환 : lastIndexOf, IndexOf
+
+/**
+ * 문자열 str 이 처음으로 등장하는 위치를 반환
+ */
+public int indexOf(String str) {}
+
+/**
+ * fromIndex 위치부터 검색을 시작하여 str 이 처음 등장하는 위치를 반환
+ */
+public int indexOf(String str, int fromIndex) {}
+
+
+/**
+ * str 이 원본 문자열에서 마지막으로 등장하는 위치(인덱스) 반환, 없으면 -1
+ */
+public int lastIndexOf(String str) {}
+
+// ex)
+String text = "hello world, hello java";
+int index = text.lastIndexOf("hello");
+System.out.println(index); // 13
+
+
+/**
+ * fromIndex 를 기준으로 왼쪽(역방향)으로 검색하여 str 이 마지막으로 등장하는 위치 반환
+ */
+public int lastIndexOf(String str, int fromIndex) {}
+
+// ex)
+String text = "hello world, hello java";
+int index = text.lastIndexOf("hello", 10);
+System.out.println(index); // 0
+
 
 // 정수배열 -> String
 Arrays.toString(int[] a);
@@ -37,6 +89,22 @@ Arrays.sort();
 int[] original = {10, 20, 30, 40, 50};
 int[] copy = Arrays.copyOfRange(original, 1, 4); // [20, 30, 40]
 ```
+
+## List 인터페이스
+
+```java
+// 
+<T> T[] toArray(T[] a);
+
+// 컬렉션의 요소를 배열로 변환 (전달한 배열 타입(T[])을 유지한 채 변환)
+// List<E> → E[]
+// Set<E> → E[]
+list.toArray(new String[0]);
+
+```
+
+
+
 ```java
 StringBuilder sb = new StringBuilder();
 // String 넣어서 초기화 가능
@@ -46,6 +114,13 @@ public StringBuilder delete(int start, int end); // start ~ end 까지 삭제
 public StringBuilder insert(int offset, String str); // offset 위치에 str 에 전달된 문자열 추가
 public StringBuilder replcae(int start, int end, String str); // start ~ end 내용을 str 로 대체
 public StringBuilder reverse(); // 문자열 뒤집기
+
+
+// 디폴트로 delim 에 " \t\n\r\f" 가 들어가있음
+StringTokenizer st = new StringTokenzier(String str, String delim);
+while(st.hasMoreTokens()) {}
+st.nextToken();
+    
 ```
 
 ## Stack
