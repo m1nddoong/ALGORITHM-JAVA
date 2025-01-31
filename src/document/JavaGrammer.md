@@ -29,8 +29,14 @@ public boolean contains(CharSequence s) {}
 // 문자열 내 뮨자 교환
 public String replace(char oldChar, char newChar) {}
 
+// 문자열 내 문자 전체 교환
+public String replaceAll(String regex, String replacement) {}
+
 // 문자열 자르기 (정규표현식 regex 입력)
 public String[] split(String regex) {}
+
+// 문자열 자르기, x를 기준으로 최대 limit 번 분할 (결과 배열의 길이가 최대 10이 되도록 한다)
+public String[] split(String regex, int limit) {}
 
 
 // 문자열에서 특정 문자열 또는 문자가 등장하는 위치(인덱스) 반환 : lastIndexOf, IndexOf
@@ -67,6 +73,11 @@ String text = "hello world, hello java";
 int index = text.lastIndexOf("hello", 10);
 System.out.println(index); // 0
 
+// 특정 문자로 문자열이 시작하는지
+public boolean startsWith(String prefix) {}
+
+// 특정 문자로 문자열이 종료되는지
+public boolean endsWith(String suffix) {}
 
 // 정수배열 -> String
 Arrays.toString(int[] a);
@@ -116,7 +127,8 @@ public StringBuilder replcae(int start, int end, String str); // start ~ end 내
 public StringBuilder reverse(); // 문자열 뒤집기
 
 
-// 디폴트로 delim 에 " \t\n\r\f" 가 들어가있음
+// 디폴트로 delim 에 " \t\n\r\f" 가 들어가있음 
+// StringTokenizer 는 빈 문자열 ("") 무시
 StringTokenizer st = new StringTokenzier(String str, String delim);
 while(st.hasMoreTokens()) {}
 st.nextToken();
