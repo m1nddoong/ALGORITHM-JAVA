@@ -78,7 +78,11 @@ public boolean startsWith(String prefix) {}
 
 // 특정 문자로 문자열이 종료되는지
 public boolean endsWith(String suffix) {}
+```
 
+## Arrays 
+
+```java
 // 정수배열 -> String
 Arrays.toString(int[] a);
 
@@ -99,6 +103,17 @@ Arrays.sort();
  */
 int[] original = {10, 20, 30, 40, 50};
 int[] copy = Arrays.copyOfRange(original, 1, 4); // [20, 30, 40]
+
+
+// arr 를 length 크기로 복사하여, 원래 배열보다 크다면 나머지 부분을 0으로 채워넣는다.
+Arrays.copyOf(arr, length);
+
+public static int[] copyOf(int[] original, int newLength) {
+  int[] copy = new int[newLength];
+  System.arraycopy(original, 0, copy, 0,
+          Math.min(original.length, newLength));
+  return copy;
+}
 ```
 
 ## List 인터페이스
