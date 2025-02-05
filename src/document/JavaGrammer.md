@@ -7,6 +7,11 @@
 // 정수를 2진수 변환
 // String binaryString = Integer.toBinaryString(int i);
 System.out.println(Integer.toBinaryString(255)); // "11111111"
+
+// 두 정수 a 와 b를 비교
+// 대소관계를 나타내는 값 반환
+// a < b 이면 -1, a == b 이면 0, a > b 이면 1
+int n = Intetger.compare(a, b);
 ```
 
 ## String
@@ -129,7 +134,7 @@ list.toArray(new String[0]);
 
 ```
 
-
+## StringBuilder & StringTokenizer
 
 ```java
 StringBuilder sb = new StringBuilder();
@@ -150,6 +155,18 @@ st.nextToken();
     
 ```
 
+
+## Map
+- HashMap ` Map<Integer, Integer> student = new HashMap<>();`
+  - 해시 테이블(Hash Table) 기반으로 동작 
+  - 데이터 순서를 보장하지 않음 (키-값 쌍이 무작위로 저장)
+  - Null 키 허용 
+- TreeMap `Map<Integer, Integer> student = new TreeMap<>();`
+  - Red-Black Tree(이진 검색 트리) 기반 동작
+  - 키 값 기준으로 자동 정렬됨 (기본적으로 오름차순)
+  - Null 키를 허용하지 않음
+
+  
 ## Stack
 > Stack 은 Vector 상속하고 있어서 문제가 있기때문에 자바 doc 찾아보면 Deque인터페이스의 ArrayDeque 구현체를 스택과 큐로 사용하는 것을 권장
 ```java
@@ -161,6 +178,72 @@ E peek();
 boolean isEmpty();
 ```
 
+
+
+## Queue 
+- Queue<E>
+  - FIFO 구조를 가진 인터페이스
+- Deque<E>
+  - 양쪽에서 삽입, 삭제가 가능한 인터페이스
+- PriorityQueue<E>
+  - 우선순위 기반 정렬이 적용된 힙(Heap) 기반 큐
+  - 요소를 정렬된 순서대로 저장하는 것이 아니라, 꺼낼 때 우선순위가 가장 높은 요소가 먼저 반환됨
+  - 기본적으로 `Comparable` 인터페이스를 구현한 객체의 `compareTo` 기준으로 정렬
+    - 숫자라면 오름차순(작은 값 우선), String 이면 알파벳 순 정렬
+  - 우선순위 기준을 변경하려면 `Comparator` 를 사용해야함
+```java
+public class PriorityQueueExample {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>(); // 기본적으로 최소 힙 (오름차순)
+        
+        pq.add(10);
+        pq.add(5);
+        pq.add(20);
+        pq.add(1);
+
+        System.out.println("우선순위 큐에서 꺼낸 값 순서:");
+        while (!pq.isEmpty()) {
+            System.out.println(pq.poll()); // 1 → 5 → 10 → 20 (오름차순)
+        }
+    }
+}
+/*
+우선순위 큐에서 꺼낸 값 순서:
+1
+5
+10
+20
+*/
+
+public class MaxHeapExample {
+  public static void main(String[] args) {
+    // 내림차순 정렬 (최대 힙)
+    PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+
+    maxHeap.add(10);
+    maxHeap.add(5);
+    maxHeap.add(20);
+    maxHeap.add(1);
+
+    System.out.println("최대 힙에서 꺼낸 값 순서:");
+    while (!maxHeap.isEmpty()) {
+      System.out.println(maxHeap.poll()); // 20 → 10 → 5 → 1 (내림차순)
+    }
+  }
+}
+/*
+최대 힙에서 꺼낸 값 순서:
+20
+10
+5
+1
+*/
+```
+ 
+- LinkedList<E>
+  - 연결 리스트 기반의 큐 (Deque 기능 포함)
+- ArrayDeque<E>
+  - 배열 기반의 큐 (성능이 우수)
 
 
 
@@ -204,6 +287,10 @@ IntStream intStream = Arrays.stream(nums);
 // 따로 charStream은 존재하지 않는다.
 Instream charStream = "abcdefg@gmail.com".chars();
 ```
+
+- IntStream.of(arr) : 정수배열 (int[]) 을 스트림(IntStream) 으로 변환
+
+
 #### IntStream 의 range() 메소드
 - 지정된 범위의 정수를 생성하는 메서드
 ```java
