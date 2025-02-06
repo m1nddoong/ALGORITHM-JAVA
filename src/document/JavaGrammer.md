@@ -83,6 +83,13 @@ public boolean startsWith(String prefix) {}
 
 // 특정 문자로 문자열이 종료되는지
 public boolean endsWith(String suffix) {}
+
+
+// 문자열을 IntStream 형태의 문자 스트림으로 반환 
+public IntStream chars() {}
+
+String str = "Hello";
+IntStream intStream = str.chars().map(c -> c - 48).sum();
 ```
 
 ## Arrays 
