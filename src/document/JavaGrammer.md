@@ -90,6 +90,17 @@ public IntStream chars() {}
 
 String str = "Hello";
 IntStream intStream = str.chars().map(c -> c - 48).sum();
+
+
+// int 값 -> String 변환  
+public static String valueOf(int i) {
+  return Integer.toString(i);
+}
+
+String.valueOf(4);
+
+
+
 ```
 
 ## Arrays 
