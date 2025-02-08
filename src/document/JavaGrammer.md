@@ -150,6 +150,10 @@ public static int[] copyOf(int[] original, int newLength) {
 // Set<E> → E[]
 list.toArray(new String[0]);
 
+
+boolean remove(Object o); // 특정 객체를 제거 (첫 번쨰로 일치하는 항목 제거)
+E romove(int index);    // 특정 인덱스 요소를 제거
+
 ```
 
 ## StringBuilder & StringTokenizer
