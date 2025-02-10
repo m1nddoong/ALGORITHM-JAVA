@@ -34,7 +34,7 @@ public boolean contains(CharSequence s) {}
 // 문자열 내 뮨자 교환
 public String replace(char oldChar, char newChar) {}
 
-// 문자열 내 문자 전체 교환
+// 문자열 내 문자 전체 교환 (정규표현식 regrex -> ex."^[l-z]")
 public String replaceAll(String regex, String replacement) {}
 
 // 문자열 자르기 (정규표현식 regex 입력)
