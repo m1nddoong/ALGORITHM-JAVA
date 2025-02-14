@@ -1,11 +1,10 @@
-# 자바 코딩테스트 대비 정리 
+# Java Coding Test
 
----
-> - [ ] BOJ $\to$ JAVA 문법 학습
-> - [ ] Programmers $\to$ 자료구조 학습
-> - [ ] BOJ/Programmers $\to$ 알고리즘 학습 
-> - [ ] BOJ 삼성 SW 역량 테스트 문제집
-> - [ ] 프로그래머스 카카오 문제집
+> ### Step
+> 1. BOJ/Programmers 유형별 알고리즘 문제 풀이
+> 2. BOJ 삼성 SW 역량 테스트 문제집
+> 3. Programmers 카카오 문제집
+
 ---
 
 ### [1. 타입 클래스](src/document/DataType)
@@ -54,6 +53,3 @@
 - Lambda Expression
 - Stream API
 
-<br>
-
-> 참고 : https://skmouse.tistory.com/entry/코딩테스트-공부방법)
