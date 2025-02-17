@@ -7,7 +7,7 @@
 
 ---
 
-### [1. 타입 클래스](./md/DataType)
+### [1. 타입 클래스](./md/DataType.md)
 - Wrapper Classes 
   - Integer
   - Character
@@ -18,14 +18,14 @@
   - StringBuilder & StringTokenizer
   - Math
 
-### [2. 자료구조](./md/DataStructure)
+### [2. 자료구조](./md/DataStructure.md)
 - Stack ⭐️
 - Queue ⭐️
 - PriorityQueue ⭐️
 - Deque ⭐️
 - HashMap ⭐️
 
-### [3. 알고리즘](./md/Algorithm)
+### [3. 알고리즘](./md/Algorithm.md)
 - 탐색 알고리즘
   - BinarySearch ⭐️
   - DFS (깊이 우선 탐색) ⭐️
@@ -48,7 +48,7 @@
   - 최소 신장 트리 (ex. 크루스칼, 프림)
 
 
-### [4. 함수형 프로그래밍](./md/FunctionalProgramming)
+### [4. 함수형 프로그래밍](./md/FunctionalProgramming.md)
 
 - Lambda Expression
 - Stream API
