@@ -1,9 +1,7 @@
 package programmers.알고리즘_고득점_Kit.N01_해시;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 // 완주하지 못한 선수 : https://school.programmers.co.kr/learn/courses/30/lessons/42576
 public class Solution42576 {
