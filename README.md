@@ -7,7 +7,7 @@
 
 ---
 
-### [1. 타입 클래스](src/document/DataType)
+### [1. 타입 클래스](./src/document/DataType)
 - Wrapper Classes 
   - Integer
   - Character
@@ -18,14 +18,14 @@
   - StringBuilder & StringTokenizer
   - Math
 
-### [2. 자료구조](src/document/DataStructure)
+### [2. 자료구조](./src/document/DataStructure)
 - Stack ⭐️
 - Queue ⭐️
 - PriorityQueue ⭐️
 - Deque ⭐️
 - HashMap ⭐️
 
-### [3. 알고리즘](src/document/Algorithm)
+### [3. 알고리즘](./src/document/Algorithm)
 - 탐색 알고리즘
   - BinarySearch ⭐️
   - DFS (깊이 우선 탐색) ⭐️
@@ -48,7 +48,7 @@
   - 최소 신장 트리 (ex. 크루스칼, 프림)
 
 
-### [4. 함수형 프로그래밍](src/document/FunctionalProgramming)
+### [4. 함수형 프로그래밍](./src/document/FunctionalProgramming)
 
 - Lambda Expression
 - Stream API
