@@ -1,9 +1,4 @@
-# Java Coding Test
-
-> ### Step
-> 1. BOJ/Programmers 유형별 알고리즘 문제 풀이
-> 2. BOJ 삼성 SW 역량 테스트 문제집
-> 3. Programmers 카카오 문제집
+# JAVA 코테 준비
 
 ---
 
