@@ -246,3 +246,6 @@ public class Main {
     }
 }
 ```
+
+### 힙 (Heap) 정렬
+

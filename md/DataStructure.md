@@ -94,19 +94,102 @@ System.out.println(map.get("A")); // 10
 - Deque (양방향 큐) 
   - 구현체 : ArrayDeque
   - 메서드 : `addFirst()`, `addLast()`, `removeFirst()`, `removeLast()`
-- PriorityQueue(우선순위 기반 정렬이 적용된 Heap 기반 큐)
-  - 내부적으로 힙을 사용하여 우선순위가 높은 요소를 먼저 처리 
-  - 구현체 : PriorityQueue
-  - 메서드 : `offer()`, `poll()`, `peek()` 
-  - 기본적으로 최소힙 (최솟값 우선)으로 동작하며, `Collection.reverseOrder()` 등을 통해 최대 힙으로 설정 가능
-  - 기본적으로 `Comparable` 인터페이스를 구현한 객체의 `compareTo` 기준으로 정렬
-    - 숫자라면 오름차순(작은 값 우선), String 이면 알파벳 순 정렬
-  - 우선순위 기준을 변경하려면 `Comparator` 를 사용해야함
+
+- PriorityQueue
+  - 기본 동작 
+    - 기본 정렬 방식 : 요소들은 Comparable 인터페이스의 compareTo 메서드에 따라 자연 순서로 정렬된다.
+      - 숫자 : 오름차순으로 정렬되어 작은 값이 우선된다.
+      - 문자열 : 알파벳 순서로 정렬된다. 
+    - 내부 구현 : PriorityQueue는 완전 이진 트리 형태의 힙을 기반으로 하며, 요소의 추가 및 제거 시 시간 복잡도가 O(log n)을 가진다.
+    - 메서드
+      - `offer(E e)` : 큐의 끝에 요소를 추가한다.
+      - `poll()` : 큐의 머리(head)에 있는 요소를 제거하고 반환한다.
+      - `peek()` : 큐의 머리(head)에 있는 요소를 제거하지 않고 반환한다.
+  - 최대 힙과 최소 힙으로서의 PriorityQueue
+    - 설명 : PriorityQueue는 기본적으로 최소 힙으로 동작하지만, Comparator를 사용하여 최대 힙으로 동작하도록 설정할 수 있다.
+    - (1) 최소 힙 (Min-Heap)
+      - 기본 동작 : 별도의 설정 없이 PriorityQueue 를 생성하면 최소 힙으로 동작한다.
+    - (2) 최대 힙 (Max-Heap)
+      - `Comparator` 사용 : `Collections.reverseOrder()` 를 이용하여 역순 정렬로 최대 힙을 구현할 수 있다.  
+  
+> 자바의 PriorityQueue 에서는 힙 삽입/삭제 시 자동으로 heapify가 실행됨
+
+  
+
 
 
 <details>
 <summary>예시</summary>
 <div markdown="1">
+
+### 기본 PriorityQueue 사용법
+```java
+// 이 예제에서 PriorityQueue는 
+// 기본적으로 최소 힙으로 동작하여 작은 값부터 출력된다.
+import java.util.PriorityQueue;
+
+public class Main {
+  public static void main(String[] args) {
+    PriorityQueue<Integer> pq = new PriorityQueue<>();
+    pq.offer(10);
+    pq.offer(5);
+    pq.offer(20);
+
+    while (!pq.isEmpty()) {
+      System.out.println(pq.poll());
+    }
+  }
+}
+// 결과
+// 5
+// 10
+// 20
+```
+
+### (1) 최소 힙 
+```java
+PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+minHeap.offer(15);
+minHeap.offer(10);
+minHeap.offer(30);
+
+while(!minHeap.isEmpty()) {
+    System.out.println(minHeap.poll());   
+}
+// 결과
+// 10
+// 15
+// 30
+```
+
+### (3) 최대 힙 (Max-Heap)
+```java
+import java.util.Collections;
+import java.util.PriorityQueue;
+
+public class Main {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        maxHeap.offer(15);
+        maxHeap.offer(10);
+        maxHeap.offer(30);
+
+        while (!maxHeap.isEmpty()) {
+            System.out.println(maxHeap.poll());
+        }
+    }
+}
+// 결과
+// 30
+// 15
+// 10
+
+// 람다식을 사용해서 Comparator 를 직접 정의할 수도 있다.
+PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
+
+```
+
+
 
 ```java
 Stack<Integer> stack = new Stack<>();
