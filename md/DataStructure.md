@@ -97,18 +97,18 @@ System.out.println(map.get("A")); // 10
 
 - PriorityQueue
   - 기본 동작 
-    - 기본 정렬 방식 : 요소들은 Comparable 인터페이스의 compareTo 메서드에 따라 자연 순서로 정렬된다.
-      - 숫자 : 오름차순으로 정렬되어 작은 값이 우선된다.
+    - 기본 정렬 방식 : 요소들은 `Comparable` 인터페이스의 `compareTo` 메서드에 따라 자연 순서로 정렬된다.
+      - 숫자 : "오름차순"으로 정렬되어 작은 값이 우선된다.
       - 문자열 : 알파벳 순서로 정렬된다. 
-    - 내부 구현 : PriorityQueue는 완전 이진 트리 형태의 힙을 기반으로 하며, 요소의 추가 및 제거 시 시간 복잡도가 O(log n)을 가진다.
+    - 내부 구현 : `PriorityQueue`는 "완전 이진 트리 형태의 힙"을 기반으로 하며, 요소의 추가 및 제거 시 시간 복잡도가 O(log n)을 가진다.
     - 메서드
       - `offer(E e)` : 큐의 끝에 요소를 추가한다.
       - `poll()` : 큐의 머리(head)에 있는 요소를 제거하고 반환한다.
       - `peek()` : 큐의 머리(head)에 있는 요소를 제거하지 않고 반환한다.
-  - 최대 힙과 최소 힙으로서의 PriorityQueue
-    - 설명 : PriorityQueue는 기본적으로 최소 힙으로 동작하지만, Comparator를 사용하여 최대 힙으로 동작하도록 설정할 수 있다.
+  - 최대 힙과 최소 힙으로서의 `PriorityQueue`
+    - 설명 : `PriorityQueue`는 기본적으로 "최소 힙"으로 동작하지만, `Comparator`를 사용하여 '최대 힙"으로 동작하도록 설정할 수 있다.
     - (1) 최소 힙 (Min-Heap)
-      - 기본 동작 : 별도의 설정 없이 PriorityQueue 를 생성하면 최소 힙으로 동작한다.
+      - 기본 동작 : 별도의 설정 없이 `PriorityQueue` 를 생성하면 최소 힙으로 동작한다.
     - (2) 최대 힙 (Max-Heap)
       - `Comparator` 사용 : `Collections.reverseOrder()` 를 이용하여 역순 정렬로 최대 힙을 구현할 수 있다.  
   
