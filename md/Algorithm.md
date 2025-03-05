@@ -260,4 +260,4 @@ public class Main {
 
 
 
-> # 6) 그래프
+> # 6) Graph
