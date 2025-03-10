@@ -233,7 +233,15 @@ int max = Arrays.stream(new int[]{1, 5, 3, 7, 2})
         .reduce(Integer.MIN_VALUE, (a, b) -> Math.max(a, b));
 
 answer = Arrays.stream(num_list).reduce(1, (a, b) -> a * b);
-// min, max, average
+
+// min, max, 
 
 
+/**
+ * average : 배열의 평균값 구하기
+ */
+
+int[] arr = {1, 2, 3, 4};
+// 배열을 IntStream() 으로 변환 후 스트림의 모든 요소의 평균 계산 (값 없으면 0.0 반환)
+Arrays.stream(arr).average().orElse(0.0);
 ```
