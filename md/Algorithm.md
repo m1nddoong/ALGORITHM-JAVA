@@ -20,7 +20,10 @@
     - 양수면 a 가 앞으로 음수면 
   - 익명 클래스를 사용하여 Comparator 구현
     - 람다식 변환 : `Arrays.sort(people, (p1, p2) -> p1.name.compareTo(p2.name));`
- 
+
+<details>
+<summary>예시</summary>
+<div markdown="1"> 
 
 ```java
 /**
@@ -80,6 +83,9 @@ Arrays.sort(people, new Comparator<Person>() {
 Arrays.sort(people, (p1, p2) -> p1.name.compareTo(p2.name)); // 이름 기준 오름차순
 ```
 
+</div>
+</details>
+
 ---
 ## 리스트 정렬: Collections.sort()
 - `Collections.sort()` 는 `List` 를 정렬하는 데 사용된다.
@@ -89,6 +95,10 @@ Arrays.sort(people, (p1, p2) -> p1.name.compareTo(p2.name)); // 이름 기준 �
 - 객체 리스트 정렬
   - Comparable
   - Comparator
+
+<details>
+<summary>예시</summary>
+<div markdown="1"> 
 
 ```java
 /**
@@ -147,9 +157,20 @@ Collections.sort(peopleList, new Comparator<Person>() {
  */
 Collections.sort(peopleList, (p1, p2) -> p1.name.compareTo(p2.name)); // 이름 기준 오름차순
 ```
+
+</div>
+</details>
+
+
 ---
 
-## Set 정렬 
+
+## Set 정렬
+
+<details>
+<summary>예시</summary>
+<div markdown="1"> 
+
 ```java
 // 익명 클래스 
 import java.util.TreeSet;
@@ -205,7 +226,17 @@ public class Main {
 }
 ```
 
+</div>
+</details>
+
+---
+
+
 ## Map 정렬
+
+<details>
+<summary>예시</summary>
+<div markdown="1"> 
 
 ```java
 // 익명 클래스
@@ -247,17 +278,58 @@ public class Main {
 }
 ```
 
+</div>
+</details>
+
+---
+
+
 > # 2) Greedy
+
+
+---
 
 
 > # 3) Dynamic Programming
 
 
+---
+
+
+
 > # 4) DFS/BFS
+
+
+---
 
 
 > # 5) 이분 탐색
 
-
+---
 
 > # 6) Graph
+ 
+
+---
+
+
+> # 7) 수학 알고리즘
+
+## 소수판별 : 에라토스테네스의 체
+- 정의 : 어떤 수의 배수는 소수가 될 수 없다.
+- 동작원리 : 
+  1. 2~n 까지의 모든 수를 소수 후보로 두고 배열 초기화
+  2. 2부터 시작하여 배수를 제거 (2의 배수, 3의 배수, ...) 하는데, $\sqrt{n}$ 보다 작거나 같은 정수까지만 반복
+  3. 배수를 젝한 후 남은 수가 소수이다
+
+---
+
+## 최대공약수 & 최소공배수 : 유클리드 호제법
+- 정의 : 두 자연수 a, b 가 있을 떄, 큰 수를 작은 수로 나눈 나머지를 이용해 최대 공약수를 구할 수 있다.
+- 동작 원리 :
+  - 최대 공약수: `GCD(a, b) = GCD(b, a % b)` 
+    1. 큰 수 `a`를 작은 수 `b`로 나눈 나머지 `r`을 구한다.
+    2. `a`를 `b`로 바꾸고 `b`를 `r`로 바꾼다.
+    3. 나머지 `r`이 `0` 이 될떄까지 반복하낟.
+    4. 마지막에 `b`가 `0`이 되었을 때 남은 `a`가 최대 공약수이다.
+  - 최소 공배수: `LCM(a, b) = a * b / GCD(a, b)`
