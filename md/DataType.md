@@ -3,15 +3,16 @@
 
 
 ## $-$ Integer
-- 정수변환 (진법 변환)
-    - 2수 변환 : `toBinaryString()`
+- 형 변환
+  - String $\to$ int : `Integer.parseInt(s)`    
+  - String, int $\to$ Integer (박싱) : `Integer.valueOf(10)`, `Integer.valueOf("10")` 
+  - Integer $\to$ int (언박싱) : `num.intValue()`
+  - int $\to$ String : `n.toString()` 
+    - n진법 문자열로 변환 : `Integer.toString(i, n)`
 - 숫자 비교 & 범위 확인
     - 정수 비교 : `compare()`, `min()`, `max()`
     - Integer 객체 비교 : `compareTo()`
-- 형 변환
-    - 문자열을 정수로 : `parseInt()`
-    - 문자열을 Integer로 : `valueOf()`
-    - 정수를 문자열로 : `toString()`
+
 
 <details>
 <summary>예시</summary>
@@ -60,10 +61,10 @@ int compare(int x, int y){}
 
 ## $-$ String
 - 문자열 조작(변형, 변환)
-  - 문자열 추출 : `substring()`
+  - 문자열 인덱스로 자르기(추출) : `substring()`
   - 대소문자 변환 : `toLowerCase()`, `toUpperCase()`
-  - 문자 : `replace()`
-  - 문자열 치환 : `replaceAll()`
+  - 문자 대체  : `replace()`
+  - 문자열 대체 : `replaceAll()`
   - 문자열 앞뒤 공백 제거 : `trim()`
 - 문자열 검색
   - 문자열 포함 여부 : `contains()`
@@ -77,6 +78,8 @@ int compare(int x, int y){}
   - 숫자를 문자열로 변환 : `valueOf()`
   - 문자열을 특정 횟수만큼 반복 반환 : `repeat()`
 
+![img.png](img.png)
+  
 <details>
 <summary>예시</summary>
 <div markdown="1">
@@ -185,6 +188,11 @@ public boolean endsWith(String suffix) {}
  * @return 주어진 정수 값을 문자열로 변환
  */
 public static String valueOf(int i) {}
+
+
+
+
+
 ```
 </div>
 </details>
