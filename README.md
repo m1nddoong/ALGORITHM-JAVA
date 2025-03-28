@@ -14,28 +14,31 @@
   - Math
 
 ### [2. 자료구조](./md/DataStructure.md)
-- Stack ⭐️
-- Queue ⭐️
+- Stack ️
+- Queue 
 - PriorityQueue ⭐️
-- Deque ⭐️
-- HashMap ⭐️
+- Deque ️
+- HashMap ️
 
 ### [3. 알고리즘](./md/Algorithm.md)
 - 탐색 알고리즘
-  - BinarySearch ⭐️
+  - 완전 탐색 ⭐️
+  - 이분 탐색 ⭐️
+  - BinarySearch ️
   - DFS (깊이 우선 탐색) ⭐️
   - BFS (너비 우선 탐색) ⭐️
 - 최적화 알고리즘
   - Greedy 
   - Dynamic Programming (DP) ⭐️
   - Backtracking
+  - Slinding Window ⭐️
 - 정렬 알고리즘
   - QuickSort
   - MergeSort
   - HeapSort 
 - 분할 정복 (Divide and Conquer)
-- 재귀 ⭐️
-- 그래프 ⭐️
+- 재귀 
+- 그래프 
   - Graph Traversal
     - DFS (깊이 우선 탐색) ⭐️
     - BFS (너비 우선 탐색) ⭐️
