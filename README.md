@@ -18,7 +18,7 @@
 - Collections
 - Stack ️
 - Queue 
-- PriorityQueue ⭐️
+- PriorityQueue
 - Deque ️
 - HashMap ️
 - Tree
