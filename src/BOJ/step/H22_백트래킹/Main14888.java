@@ -29,7 +29,6 @@ public class Main14888 {
             operator[i] = Integer.parseInt(st.nextToken());
         }
 
-
         dfs(1, number[0]);
 
         System.out.println(MAX);
